@@ -1,0 +1,13 @@
+rule "Light Control"
+when
+        Item VoiceCommand received command
+then
+        var String command = VoiceCommand.state.toString.toLowerCase
+        if(command.contains("lamparita") || command.contains("light")){
+            if (command.contains("enciende") || command.contains("on")){
+                    lamp.sendCommand("ON")
+            }else if (command.contains("apaga") || command.contains("off")){
+                    lamp.sendCommand("OFF")
+            }
+        }
+end

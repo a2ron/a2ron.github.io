@@ -1,0 +1,49 @@
+rule "Power Strip Global State"
+when
+        Item AllGpio changed
+then
+  var state ="ON"
+
+  if(AllGpio.state==OFF)
+        state = "OFF"
+
+  PIN16.sendCommand(state)
+  PIN20.sendCommand(state)
+  PIN26.sendCommand(state)
+  PIN19.sendCommand(state)
+  lamp.sendCommand(state)
+
+end
+////////////////////////////////////////////////////////////////////
+rule "System started, turn off Power Strip"
+when
+        System started
+then
+  AllGpio.sendCommand("ON")
+end
+////////////////////////////////////////////////////////////////////
+rule "Play on Kodi, turn on Speakers"
+when
+        Item KodiLocalhost_Stop changed
+then
+  var state ="ON"
+
+  if(KodiLocalhost_Stop.state==OFF)
+        state = "OFF"
+
+  PIN16.sendCommand(state)
+end
+////////////////////////////////////////////////////////////////////
+rule "midnight, turn off lamp"
+when
+    Time cron "0 0 0 * * ?"
+then
+    lamp.sendCommand("ON")
+end
+////////////////////////////////////////////////////////////////////
+rule "when dusk, turn on lamp"
+when
+  Channel 'astro:sun:local:astroDusk#event' triggered START
+then
+    lamp.sendCommand("OFF")
+end

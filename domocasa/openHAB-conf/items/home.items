@@ -1,0 +1,9 @@
+String VoiceCommand
+
+Switch PIN20 "PIN20" { gpio="pin:20" }
+Switch PIN16 "PIN16" { gpio="pin:16" }
+Switch PIN26 "PIN26" { gpio="pin:26" }
+Switch PIN19 "PIN19" { gpio="pin:19" }
+Switch lamp "lamp" { gpio="pin:21" }
+
+Switch AllGpio "AllGpio"
