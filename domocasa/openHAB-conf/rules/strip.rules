@@ -1,7 +1,12 @@
+
+var logTag ="strip.rules"
+
 rule "Power Strip Global State"
 when
         Item AllGpio changed
 then
+
+  logInfo(logTag, "Power Strip Global State")
   var state ="ON"
 
   if(AllGpio.state==OFF)
@@ -13,37 +18,47 @@ then
   PIN19.sendCommand(state)
   lamp.sendCommand(state)
 
+
 end
 ////////////////////////////////////////////////////////////////////
 rule "System started, turn off Power Strip"
 when
         System started
 then
+
+  logInfo(logTag, "System started, turn off Power Strip")
   AllGpio.sendCommand("ON")
+
 end
 ////////////////////////////////////////////////////////////////////
 rule "Play on Kodi, turn on Speakers"
 when
         Item KodiLocalhost_Stop changed
 then
+
+  logInfo(logTag, "Play on Kodi, turn on Speakers")
   var state ="ON"
 
   if(KodiLocalhost_Stop.state==OFF)
         state = "OFF"
 
   PIN16.sendCommand(state)
+
 end
 ////////////////////////////////////////////////////////////////////
 rule "midnight, turn off lamp"
 when
     Time cron "0 0 0 * * ?"
 then
+
+    logInfo(logTag, "midnight, turn off lamp")
     lamp.sendCommand("ON")
 end
 ////////////////////////////////////////////////////////////////////
 rule "when dusk, turn on lamp"
 when
-  Channel 'astro:sun:local:astroDusk#event' triggered START
+  Channel 'astro:sun:local:civilDusk#event' triggered START
 then
+    logInfo(logTag, "when dusk, turn on lamp")
     lamp.sendCommand("OFF")
 end
