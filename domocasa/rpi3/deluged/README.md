@@ -1,4 +1,3 @@
-
 # How to install a Torrent server with WebUI client
 
 Install Deluge and Web client to manage your torrents:
