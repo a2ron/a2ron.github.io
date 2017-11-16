@@ -15,7 +15,7 @@ Raspberry, arduino, tv-box and hacks in general to automatise your home.
 
 
 
-[torrent-server]:rpi3/deluged.md
+[torrent-server]:rpi3/deluged
 [power-strip]:openHAB-conf/items/home.items
 [power-strip-hack]:power-strip-hack/
 [voice]:openHAB-conf/rules/voice.rules
