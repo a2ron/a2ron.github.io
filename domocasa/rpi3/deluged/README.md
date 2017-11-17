@@ -12,6 +12,8 @@ deluge-web
 ```
 You will have your torrent manager at [http://localhost:8112](http://localhost:8112)
 
+![](assets/deluge-web.png)
+
 Also you can configure it for changing SSL certificate, port, authentication, etc.
 ```
 sudo pkill -9 deluge-web
@@ -25,3 +27,7 @@ crontab -e
 ...
 @reboot deluge-web
 ```
+Once you have the torrent server and web UI client, I really recommend [Transdrone][Transdrone] for managing your torrents more friendly.
+
+
+[Transdrone]:https://play.google.com/store/apps/details?id=org.transdroid.lite
