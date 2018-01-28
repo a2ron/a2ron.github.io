@@ -6,6 +6,7 @@ Raspberry, arduino, tv-box and hacks in general to automatise your home.
 
 | 📅 Date | Description |
 |----------------------|--------|
+| 2018-01-28 | [Ansible setup for domotic goodies][ansible-setup] |
 | 2017-11-13 | [Torrent Server][torrent-server] |
 | 2017-11-05 | [Power Strip integrated with OpenHab via GPIO binding][power-strip] |
 | 2017-10-31 | [Power Strip hack to connect relays and control it ON/OFF][power-strip-hack] | 
@@ -15,6 +16,7 @@ Raspberry, arduino, tv-box and hacks in general to automatise your home.
 
 
 
+[ansible-setup]:ansible-setup/
 [torrent-server]:rpi3/deluged
 [power-strip]:openHAB-conf/items/home.items
 [power-strip-hack]:power-strip-hack/
