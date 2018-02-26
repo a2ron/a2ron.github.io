@@ -6,6 +6,7 @@ Raspberry, arduino, tv-box and hacks in general to automatise your home.
 
 | 📅 Date | Description |
 |----------------------|--------|
+| 2018-02-26 | [Alexa - Raspberry pi: Playbook][raspi-alexa] |
 | 2018-02-06 | [HTTP GPIO Server](gpio-server) |
 | 2018-01-28 | [Ansible setup for domotic goodies][ansible-setup] |
 | 2017-11-13 | [Torrent Server][torrent-server] |
@@ -22,3 +23,4 @@ Raspberry, arduino, tv-box and hacks in general to automatise your home.
 [voice]:openHAB-conf/rules/voice.rules
 [tv-box]:tv-box
 [rpi3]:rpi3
+[raspi-alexa]:alexa-playbook/
